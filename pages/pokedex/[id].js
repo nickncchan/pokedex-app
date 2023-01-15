@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Head from "next/head";
 import PokemonName from "@/components/pokemonName";
+import PokemonType from "@/components/PokemonType";
 
 const Pokedex = ({ pokemonData }) => {
   return (
@@ -50,6 +51,9 @@ const Pokedex = ({ pokemonData }) => {
             </a>{" "}
             {pokemonData.weight / 10} kg
           </p>
+          <div className="py-3">
+            <PokemonType pokemonType={pokemonData.types} />
+          </div>
         </div>
       </div>
     </div>
