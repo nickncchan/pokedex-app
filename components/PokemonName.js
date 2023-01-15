@@ -9,9 +9,17 @@ const PokemonName = ({ pokemonName }) => {
         splitName[1] === "incarnate" ||
         splitName[1] === "standard" ||
         splitName[1] === "disguised" ||
-        splitName[1] === "land"
+        splitName[1] === "land" ||
+        splitName[1] === "ice" ||
+        splitName[1] === "red" ||
+        splitName[1] === "single" ||
+        splitName[1] === "midday" ||
+        splitName[1] === "male" ||
+        splitName[1] === "female"
       ) {
         name = splitName[0].charAt(0).toUpperCase() + splitName[0].slice(1);
+      } else if (splitName[1] === "o") {
+        name = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
       } else {
         name =
           splitName[0].charAt(0).toUpperCase() +

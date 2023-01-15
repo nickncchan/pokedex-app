@@ -3,6 +3,7 @@ import Head from "next/head";
 import PokemonName from "@/components/pokemonName";
 import PokemonType from "@/components/PokemonType";
 import PokemonAbilities from "@/components/PokemonAbilities";
+import PokemonStats from "@/components/PokemonStats";
 
 const Pokedex = ({ pokemonData }) => {
   return (
@@ -39,6 +40,14 @@ const Pokedex = ({ pokemonData }) => {
 
       <div className="flex justify-center align-start">
         <div className="text-left py-3">
+          <p className="text-center py-3">
+            #{pokemonData.id} of{" "}
+            <a
+              href={`https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number`}
+            >
+              905
+            </a>
+          </p>
           <PokemonName pokemonName={pokemonData.name} />
           <p className="py-3">
             <a href="https://bulbapedia.bulbagarden.net/wiki/Height">
@@ -62,6 +71,14 @@ const Pokedex = ({ pokemonData }) => {
           </p>
           <div className="grid justify-center pb-3">
             <PokemonAbilities pokemonAbilities={pokemonData.abilities} />
+          </div>
+          <div className="grid justify-start pb-3">
+            <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
+              <u>Base Stats</u>
+            </a>
+            <ul>
+              <PokemonStats pokemonStats={pokemonData.stats} />
+            </ul>
           </div>
         </div>
       </div>
