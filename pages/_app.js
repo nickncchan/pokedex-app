@@ -5,7 +5,7 @@ function MyApp({ Component, pageProps }) {
   const randomId = Math.floor(Math.random() * 905) + 1;
 
   return (
-    <div className="px-2 py-1">
+    <div className="px-2 py-1 text-2xl">
       <Link href="/">Home</Link> |{" "}
       <Link href={`/pokedex/${randomId}`}>Pokédex</Link>
       <Component {...pageProps} />
