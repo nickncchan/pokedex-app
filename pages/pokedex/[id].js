@@ -2,6 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import PokemonName from "@/components/pokemonName";
 import PokemonType from "@/components/PokemonType";
+import PokemonAbilities from "@/components/PokemonAbilities";
 
 const Pokedex = ({ pokemonData }) => {
   return (
@@ -37,7 +38,7 @@ const Pokedex = ({ pokemonData }) => {
       </div>
 
       <div className="flex justify-center align-start">
-        <div className="text-left">
+        <div className="text-left py-3">
           <PokemonName pokemonName={pokemonData.name} />
           <p className="py-3">
             <a href="https://bulbapedia.bulbagarden.net/wiki/Height">
@@ -53,6 +54,14 @@ const Pokedex = ({ pokemonData }) => {
           </p>
           <div className="py-3">
             <PokemonType pokemonType={pokemonData.types} />
+          </div>
+          <p>
+            <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
+              <u>Abilities</u>
+            </a>
+          </p>
+          <div className="grid justify-center pb-3">
+            <PokemonAbilities pokemonAbilities={pokemonData.abilities} />
           </div>
         </div>
       </div>
