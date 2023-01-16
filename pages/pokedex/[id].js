@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import PokemonName from "@/components/pokemonName";
 import PokemonType from "@/components/PokemonType";
@@ -6,12 +8,20 @@ import PokemonAbilities from "@/components/PokemonAbilities";
 import PokemonStats from "@/components/PokemonStats";
 
 const Pokedex = ({ pokemonData }) => {
+  const router = useRouter();
+  const [routeId, setRouteId] = useState(null);
+
+  const pokemonRoute = (e) => {
+    e.preventDefault();
+    router.push(`/pokedex/${routeId}`);
+  };
+
   return (
     <div>
       <Head>
         <title>Pokédex</title>
         <link
-          rel="Pokeball"
+          rel="icon"
           href="https://archives.bulbagarden.net/media/upload/d/dc/GO_Poké_Ball.png"
         />
       </Head>
@@ -27,6 +37,26 @@ const Pokedex = ({ pokemonData }) => {
           </a>{" "}
           for more info!
         </div>
+      </div>
+
+      <div className="flex justify-center py-3">
+        <form onSubmit={(e) => pokemonRoute(e)}>
+          <input
+            type="number"
+            min="1"
+            max="905"
+            value={routeId}
+            onChange={(e) => setRouteId(e.target.value)}
+            placeholder="Search Pokédex #"
+          />{" "}
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+          >
+            {" "}
+            Search{" "}
+          </button>
+        </form>
       </div>
 
       <div className="flex justify-center">

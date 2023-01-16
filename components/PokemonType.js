@@ -8,7 +8,7 @@ const PokemonType = ({ pokemonType }) => {
     typesArr.push(typeName);
   }
 
-  const typeSolver = () => {
+  const typeRender = () => {
     if (typesArr.length > 1) {
       return (
         <p>
@@ -44,7 +44,7 @@ const PokemonType = ({ pokemonType }) => {
     }
   };
 
-  return typeSolver();
+  return typeRender();
 };
 
 export default PokemonType;
