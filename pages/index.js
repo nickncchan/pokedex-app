@@ -1,7 +1,16 @@
 import Head from "next/head";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Home() {
-  const randomId = Math.floor(Math.random() * 905) + 1;
+  const router = useRouter();
+  const [routeId, setRouteId] = useState(Math.floor(Math.random() * 905) + 1);
+
+  const pokemonRoute = (e) => {
+    e.preventDefault();
+    router.push(`/pokedex/${routeId}`);
+  };
 
   return (
     <div>
@@ -12,7 +21,28 @@ export default function Home() {
           href="https://archives.bulbagarden.net/media/upload/d/dc/GO_Poké_Ball.png"
         />
       </Head>
-      <h1 className="text-2xl pl-1 pt-2">Welcome to the Pokedex App!</h1>
+      <div className="text-center py-5">
+        <h2 className="text-4xl py-5">Welcome to the Pokédex App!</h2>
+      </div>
+      <div className="flex justify-center">
+        <Image
+          src={`https://archives.bulbagarden.net/media/upload/b/ba/Pt_Pok%C3%A9dex.png`}
+          alt="Pokedex"
+          width={300}
+          height={300}
+        />
+      </div>
+      <div className="text-center py-5">
+        <p>
+          You can find information about your favorite Pokemon all in one place!
+        </p>
+        <button
+          onClick={pokemonRoute}
+          className="bg-blue-500 hover:bg-blue-700 text-white my-5 py-1 px-3 rounded-full"
+        >
+          Click here to get started!
+        </button>
+      </div>
     </div>
   );
 }

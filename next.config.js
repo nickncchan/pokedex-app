@@ -5,6 +5,10 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["raw.githubusercontent.com"],
+    domains: [
+      "raw.githubusercontent.com",
+      "i1.sndcdn.com",
+      "archives.bulbagarden.net",
+    ],
   },
 };

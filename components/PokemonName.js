@@ -15,7 +15,9 @@ const PokemonName = ({ pokemonName }) => {
         splitName[1] === "single" ||
         splitName[1] === "midday" ||
         splitName[1] === "male" ||
-        splitName[1] === "female"
+        splitName[1] === "female" ||
+        splitName[1] === "galar" ||
+        splitName[1] === "altered"
       ) {
         name = splitName[0].charAt(0).toUpperCase() + splitName[0].slice(1);
       } else if (splitName[1] === "o") {
@@ -40,7 +42,9 @@ const PokemonName = ({ pokemonName }) => {
       <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_name">
         <u>Name:</u>
       </a>{" "}
-      <a href={`https://bulbapedia.bulbagarden.net/wiki/${renderName()}`}>
+      <a
+        href={`https://bulbapedia.bulbagarden.net/wiki/${renderName()}_(Pokémon)`}
+      >
         {renderName()}
       </a>
     </p>

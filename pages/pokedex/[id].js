@@ -30,28 +30,30 @@ const Pokedex = ({ pokemonData }) => {
         <h2 className="text-5xl py-3">
           <u>Pokédex</u>
         </h2>
-        <div className="text-xl py-3">
+        <p className="text-xl py-3">
           Click the links to go to the{" "}
           <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
             Bulbapedia Wiki
           </a>{" "}
           for more info!
-        </div>
+        </p>
+        <p className="text-xl pb-3">
+          <u>Note:</u> If you go beyond Pokédex #905, not all information may be
+          shown.
+        </p>
       </div>
 
       <div className="flex justify-center py-3">
         <form onSubmit={(e) => pokemonRoute(e)}>
           <input
-            type="number"
-            min="1"
-            max="905"
             value={routeId}
             onChange={(e) => setRouteId(e.target.value)}
-            placeholder="Search Pokédex #"
+            placeholder="Name or ID"
+            className="rounded-lg w-32 p-2 text-xl"
           />{" "}
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-full"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold mx-1 py-1 px-3 rounded-full"
           >
             {" "}
             Search{" "}
@@ -75,7 +77,7 @@ const Pokedex = ({ pokemonData }) => {
             <a
               href={`https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number`}
             >
-              905
+              1008
             </a>
           </p>
           <PokemonName pokemonName={pokemonData.name} />
