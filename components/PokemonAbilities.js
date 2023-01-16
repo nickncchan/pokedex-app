@@ -24,6 +24,7 @@ const PokemonAbilities = ({ pokemonAbilities }) => {
       <li key={nanoid()}>
         <a
           href={`https://bulbapedia.bulbagarden.net/wiki/${ability}_(Ability)`}
+          target="_blank"
         >
           {ability}
         </a>
@@ -33,7 +34,7 @@ const PokemonAbilities = ({ pokemonAbilities }) => {
 
   return (
     <p>
-      <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Ability" target="_blank">
         <u>Abilities</u>
       </a>
       <ol className="pl-10 list-disc">{renderAbilities()}</ol>

@@ -39,11 +39,15 @@ const PokemonName = ({ pokemonName }) => {
 
   return (
     <p>
-      <a href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_name">
+      <a
+        href="https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_name"
+        target="_blank"
+      >
         <u>Name:</u>
       </a>{" "}
       <a
         href={`https://bulbapedia.bulbagarden.net/wiki/${renderName()}_(Pokémon)`}
+        target="_blank"
       >
         {renderName()}
       </a>

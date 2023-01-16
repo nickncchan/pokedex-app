@@ -55,7 +55,10 @@ const Pokedex = ({ pokemonData }) => {
         </h2>
         <p className="text-xl py-3">
           Click the links to go to the{" "}
-          <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
+          <a
+            href="https://bulbapedia.bulbagarden.net/wiki/Main_Page"
+            target="_blank"
+          >
             <u>Bulbapedia Wiki</u>
           </a>{" "}
           for more info!
@@ -91,6 +94,7 @@ const Pokedex = ({ pokemonData }) => {
             #{pokemonData.id} of{" "}
             <a
               href={`https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number`}
+              target="_blank"
             >
               1008
             </a>
@@ -109,13 +113,19 @@ const Pokedex = ({ pokemonData }) => {
             <div className="text-left py-3">
               <PokemonName pokemonName={pokemonData.name} />
               <p className="py-3">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Height">
+                <a
+                  href="https://bulbapedia.bulbagarden.net/wiki/Height"
+                  target="_blank"
+                >
                   <u>Height:</u>
                 </a>{" "}
                 {pokemonData.height / 10} m
               </p>
               <p>
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Weight">
+                <a
+                  href="https://bulbapedia.bulbagarden.net/wiki/Weight"
+                  target="_blank"
+                >
                   <u>Weight:</u>
                 </a>{" "}
                 {pokemonData.weight / 10} kg

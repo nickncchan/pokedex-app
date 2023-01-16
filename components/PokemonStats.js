@@ -29,7 +29,7 @@ const PokemonStats = ({ pokemonStats }) => {
   };
 
   return (
-    <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
+    <a href="https://bulbapedia.bulbagarden.net/wiki/Stat" target="_blank">
       <u>Base Stats</u>
       <ul className="list-none">{renderStats()}</ul>
     </a>

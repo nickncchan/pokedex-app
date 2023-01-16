@@ -10,7 +10,10 @@ const PokemonType = ({ pokemonType }) => {
 
   const typeRender = () => {
     return (
-      <a href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[1]}_(type)`}>
+      <a
+        href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[1]}_(type)`}
+        target="_blank"
+      >
         {typesArr[1]}
       </a>
     );
@@ -18,14 +21,17 @@ const PokemonType = ({ pokemonType }) => {
 
   return (
     <p>
-      <a href="https://bulbapedia.bulbagarden.net/wiki/Type">
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Type" target="_blank">
         <u>Type:</u>
       </a>{" "}
-      <a href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}>
+      <a
+        href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}
+        target="_blank"
+      >
         {typesArr[0]}
       </a>
-      {typesArr.length > 1 ? " & " : null}
-      {typesArr.length > 1 ? typeRender() : null}
+      {typesArr.length > 1 && " & "}
+      {typesArr.length > 1 && typeRender()}
     </p>
   );
 };
