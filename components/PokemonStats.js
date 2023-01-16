@@ -24,7 +24,16 @@ const PokemonStats = ({ pokemonStats }) => {
     statsArr.push(`${statsName}: ${pokemonStats[i].base_stat}`);
   }
 
-  return statsArr.map((stat) => <li key={nanoid()}>{stat}</li>);
+  const renderStats = () => {
+    return statsArr.map((stat) => <li key={nanoid()}>{stat}</li>);
+  };
+
+  return (
+    <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
+      <u>Base Stats</u>
+      <ul className="list-none">{renderStats()}</ul>
+    </a>
+  );
 };
 
 export default PokemonStats;

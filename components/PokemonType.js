@@ -9,42 +9,25 @@ const PokemonType = ({ pokemonType }) => {
   }
 
   const typeRender = () => {
-    if (typesArr.length > 1) {
-      return (
-        <p>
-          <a href="https://bulbapedia.bulbagarden.net/wiki/Type">
-            <u>Types:</u>
-          </a>{" "}
-          <a
-            href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}
-          >
-            {typesArr[0]}
-          </a>{" "}
-          &{" "}
-          <a
-            href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[1]}_(type)`}
-          >
-            {typesArr[1]}
-          </a>
-        </p>
-      );
-    } else {
-      return (
-        <p>
-          <a href="https://bulbapedia.bulbagarden.net/wiki/Type">
-            <u>Type:</u>
-          </a>{" "}
-          <a
-            href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}
-          >
-            {typesArr[0]}
-          </a>
-        </p>
-      );
-    }
+    return (
+      <a href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[1]}_(type)`}>
+        {typesArr[1]}
+      </a>
+    );
   };
 
-  return typeRender();
+  return (
+    <p>
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Type">
+        <u>Type:</u>
+      </a>{" "}
+      <a href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}>
+        {typesArr[0]}
+      </a>
+      {typesArr.length > 1 ? " & " : null}
+      {typesArr.length > 1 ? typeRender() : null}
+    </p>
+  );
 };
 
 export default PokemonType;

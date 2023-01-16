@@ -35,8 +35,6 @@ const Pokedex = ({ pokemonData }) => {
     backgroundColor: typeColors[typeName],
   };
 
-  console.log(cardColor);
-
   const pokemonRoute = (e) => {
     e.preventDefault();
     router.push(`/pokedex/${routeId}`);
@@ -58,7 +56,7 @@ const Pokedex = ({ pokemonData }) => {
         <p className="text-xl py-3">
           Click the links to go to the{" "}
           <a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">
-            Bulbapedia Wiki
+            <u>Bulbapedia Wiki</u>
           </a>{" "}
           for more info!
         </p>
@@ -103,6 +101,7 @@ const Pokedex = ({ pokemonData }) => {
               alt="Pokémon Image"
               width={300}
               height={300}
+              priority={true}
             />
           </div>
 
@@ -124,21 +123,11 @@ const Pokedex = ({ pokemonData }) => {
               <div className="py-3">
                 <PokemonType pokemonType={pokemonData.types} />
               </div>
-              <p>
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
-                  <u>Abilities</u>
-                </a>
-              </p>
-              <div className="grid justify-center pb-3">
+              <div className="grid justify-start pb-3">
                 <PokemonAbilities pokemonAbilities={pokemonData.abilities} />
               </div>
               <div className="grid justify-start pb-3">
-                <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
-                  <u>Base Stats</u>
-                </a>
-                <ul>
-                  <PokemonStats pokemonStats={pokemonData.stats} />
-                </ul>
+                <PokemonStats pokemonStats={pokemonData.stats} />
               </div>
             </div>
           </div>

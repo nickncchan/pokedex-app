@@ -19,13 +19,26 @@ const PokemonAbilities = ({ pokemonAbilities }) => {
     }
   }
 
-  return abilitiesArr.map((ability) => (
-    <li key={nanoid()}>
-      <a href={`https://bulbapedia.bulbagarden.net/wiki/${ability}_(Ability)`}>
-        {ability}
+  const renderAbilities = () => {
+    return abilitiesArr.map((ability) => (
+      <li key={nanoid()}>
+        <a
+          href={`https://bulbapedia.bulbagarden.net/wiki/${ability}_(Ability)`}
+        >
+          {ability}
+        </a>
+      </li>
+    ));
+  };
+
+  return (
+    <p>
+      <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
+        <u>Abilities</u>
       </a>
-    </li>
-  ));
+      <ol className="pl-10 list-disc">{renderAbilities()}</ol>
+    </p>
+  );
 };
 
 export default PokemonAbilities;

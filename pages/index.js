@@ -11,6 +11,24 @@ export default function Home() {
     router.push(`/pokedex/${randomNum}`);
   };
 
+  const renderPokemon = () => {
+    let idArr = [];
+
+    for (let i = 0; i < 6; i++) {
+      idArr.push(Math.floor(Math.random() * 905) + 1);
+    }
+
+    return idArr.map((id) => (
+      <Image
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+        alt="Pokedex"
+        width={150}
+        height={150}
+        priority={true}
+      />
+    ));
+  };
+
   return (
     <div>
       <Head>
@@ -29,19 +47,21 @@ export default function Home() {
           alt="Pokedex"
           width={300}
           height={300}
+          priority={true}
         />
       </div>
       <div className="text-center py-5">
         <p>
-          You can find information about your favorite Pokemon all in one place!
+          You can find information about your favorite Pokémon all in one place!
         </p>
         <button
           onClick={pokemonRoute}
-          className="bg-blue-500 hover:bg-blue-700 text-white my-5 py-1 px-3 rounded-full"
+          className="bg-blue-700 hover:bg-blue-900 text-white my-8 py-1 px-3 rounded-full"
         >
           Click here to get started!
         </button>
       </div>
+      <div className="flex flex-wrap justify-center">{renderPokemon()}</div>
     </div>
   );
 }
