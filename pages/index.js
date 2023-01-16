@@ -37,7 +37,6 @@ export default function Home() {
         <link
           rel="icon"
           href="https://archives.bulbagarden.net/media/upload/d/dc/GO_Poké_Ball.png"
-          priority={true}
         />
       </Head>
       <div className="text-center py-5">
