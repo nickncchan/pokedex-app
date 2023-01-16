@@ -17,7 +17,7 @@ const Pokedex = ({ pokemonData }) => {
   };
 
   return (
-    <div>
+    <div className="pt-5">
       <Head>
         <title>Pokédex</title>
         <link
@@ -25,7 +25,6 @@ const Pokedex = ({ pokemonData }) => {
           href="https://archives.bulbagarden.net/media/upload/d/dc/GO_Poké_Ball.png"
         />
       </Head>
-
       <div className="text-center">
         <h2 className="text-5xl py-3">
           <u>Pokédex</u>
@@ -42,7 +41,6 @@ const Pokedex = ({ pokemonData }) => {
           shown.
         </p>
       </div>
-
       <div className="flex justify-center py-3">
         <form onSubmit={(e) => pokemonRoute(e)}>
           <input
@@ -60,18 +58,8 @@ const Pokedex = ({ pokemonData }) => {
           </button>
         </form>
       </div>
-
-      <div className="flex justify-center">
-        <Image
-          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
-          alt="Pokémon Image"
-          width={250}
-          height={250}
-        />
-      </div>
-
-      <div className="flex justify-center align-start">
-        <div className="text-left py-3">
+      <div className="flex justify-center py-3">
+        <div className="w-auto p-3 bg-white border border-white rounded-lg shadow-md dark:bg-blue-900 dark:border-yellow-400">
           <p className="text-center py-3">
             #{pokemonData.id} of{" "}
             <a
@@ -80,37 +68,50 @@ const Pokedex = ({ pokemonData }) => {
               1008
             </a>
           </p>
-          <PokemonName pokemonName={pokemonData.name} />
-          <p className="py-3">
-            <a href="https://bulbapedia.bulbagarden.net/wiki/Height">
-              <u>Height:</u>
-            </a>{" "}
-            {pokemonData.height / 10} m
-          </p>
-          <p>
-            <a href="https://bulbapedia.bulbagarden.net/wiki/Weight">
-              <u>Weight:</u>
-            </a>{" "}
-            {pokemonData.weight / 10} kg
-          </p>
-          <div className="py-3">
-            <PokemonType pokemonType={pokemonData.types} />
+          <div className="flex justify-center bg-white border border-white rounded-lg shadow-md dark:bg-gray-900 dark:border-yellow-400">
+            <Image
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
+              alt="Pokémon Image"
+              width={300}
+              height={300}
+            />
           </div>
-          <p>
-            <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
-              <u>Abilities</u>
-            </a>
-          </p>
-          <div className="grid justify-center pb-3">
-            <PokemonAbilities pokemonAbilities={pokemonData.abilities} />
-          </div>
-          <div className="grid justify-start pb-3">
-            <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
-              <u>Base Stats</u>
-            </a>
-            <ul>
-              <PokemonStats pokemonStats={pokemonData.stats} />
-            </ul>
+
+          <div className="flex justify-center align-start">
+            <div className="text-left py-3">
+              <PokemonName pokemonName={pokemonData.name} />
+              <p className="py-3">
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Height">
+                  <u>Height:</u>
+                </a>{" "}
+                {pokemonData.height / 10} m
+              </p>
+              <p>
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Weight">
+                  <u>Weight:</u>
+                </a>{" "}
+                {pokemonData.weight / 10} kg
+              </p>
+              <div className="py-3">
+                <PokemonType pokemonType={pokemonData.types} />
+              </div>
+              <p>
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Ability">
+                  <u>Abilities</u>
+                </a>
+              </p>
+              <div className="grid justify-center pb-3">
+                <PokemonAbilities pokemonAbilities={pokemonData.abilities} />
+              </div>
+              <div className="grid justify-start pb-3">
+                <a href="https://bulbapedia.bulbagarden.net/wiki/Stat">
+                  <u>Base Stats</u>
+                </a>
+                <ul>
+                  <PokemonStats pokemonStats={pokemonData.stats} />
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
