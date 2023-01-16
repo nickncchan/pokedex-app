@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { nanoid } from "nanoid";
 
 export default function Home() {
   const router = useRouter();
@@ -20,6 +21,7 @@ export default function Home() {
 
     return idArr.map((id) => (
       <Image
+        key={id}
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
         alt="Pokedex"
         width={150}
