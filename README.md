@@ -8,6 +8,6 @@ Also, many of the Pokémon have certain forms that influence the API's naming of
 
 This app was created using Next.js and styled using TailwindCSS. 
 
-It was my first time working with TailwindCSS and server-side rendering and my attempt at integrating them together with my basic understandings of Next.js.
+It was my first time working with TailwindCSS along with server-side rendering and my attempt at integrating them together with my current knowledge of Next.js.
 
 I hope you enjoy it!
