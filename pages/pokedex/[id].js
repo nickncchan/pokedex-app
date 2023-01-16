@@ -2,7 +2,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Head from "next/head";
-import PokemonName from "@/components/pokemonName";
+import PokemonName from "@/components/PokemonName";
 import PokemonType from "@/components/PokemonType";
 import PokemonAbilities from "@/components/PokemonAbilities";
 import PokemonStats from "@/components/PokemonStats";
