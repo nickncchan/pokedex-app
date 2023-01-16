@@ -13,6 +13,7 @@ const PokemonType = ({ pokemonType }) => {
       <a
         href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[1]}_(type)`}
         target="_blank"
+        rel="noreferrer"
       >
         {typesArr[1]}
       </a>
@@ -21,12 +22,17 @@ const PokemonType = ({ pokemonType }) => {
 
   return (
     <p>
-      <a href="https://bulbapedia.bulbagarden.net/wiki/Type" target="_blank">
+      <a
+        href="https://bulbapedia.bulbagarden.net/wiki/Type"
+        target="_blank"
+        rel="noreferrer"
+      >
         <u>Type:</u>
       </a>{" "}
       <a
         href={`https://bulbapedia.bulbagarden.net/wiki/${typesArr[0]}_(type)`}
         target="_blank"
+        rel="noreferrer"
       >
         {typesArr[0]}
       </a>

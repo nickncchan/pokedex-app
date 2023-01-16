@@ -58,6 +58,7 @@ const Pokedex = ({ pokemonData }) => {
           <a
             href="https://bulbapedia.bulbagarden.net/wiki/Main_Page"
             target="_blank"
+            rel="noreferrer"
           >
             <u>Bulbapedia Wiki</u>
           </a>{" "}
@@ -95,6 +96,7 @@ const Pokedex = ({ pokemonData }) => {
             <a
               href={`https://bulbapedia.bulbagarden.net/wiki/List_of_Pokémon_by_National_Pokédex_number`}
               target="_blank"
+              rel="noreferrer"
             >
               1008
             </a>
@@ -116,6 +118,7 @@ const Pokedex = ({ pokemonData }) => {
                 <a
                   href="https://bulbapedia.bulbagarden.net/wiki/Height"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <u>Height:</u>
                 </a>{" "}
@@ -125,6 +128,7 @@ const Pokedex = ({ pokemonData }) => {
                 <a
                   href="https://bulbapedia.bulbagarden.net/wiki/Weight"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <u>Weight:</u>
                 </a>{" "}
