@@ -10,6 +10,32 @@ import PokemonStats from "@/components/PokemonStats";
 const Pokedex = ({ pokemonData }) => {
   const router = useRouter();
   const [routeId, setRouteId] = useState(null);
+  const typeName = pokemonData.types[0].type.name;
+  const typeColors = {
+    normal: "#A8A77A",
+    fire: "#EE8130",
+    water: "#6390F0",
+    electric: "#F7D02C",
+    grass: "#7AC74C",
+    ice: "#96D9D6",
+    fighting: "#C22E28",
+    poison: "#A33EA1",
+    ground: "#E2BF65",
+    flying: "#A98FF3",
+    psychic: "#F95587",
+    bug: "#A6B91A",
+    rock: "#B6A136",
+    ghost: "#735797",
+    dragon: "#6F35FC",
+    dark: "#705746",
+    steel: "#B7B7CE",
+    fairy: "#D685AD",
+  };
+  const cardColor = {
+    backgroundColor: typeColors[typeName],
+  };
+
+  console.log(cardColor);
 
   const pokemonRoute = (e) => {
     e.preventDefault();
@@ -59,7 +85,10 @@ const Pokedex = ({ pokemonData }) => {
         </form>
       </div>
       <div className="flex justify-center py-3">
-        <div className="w-auto p-3 bg-white border border-white rounded-lg shadow-md dark:bg-blue-900 dark:border-yellow-400">
+        <div
+          className="m-8 border-yellow-400 border-4 rounded-lg text-black"
+          style={cardColor}
+        >
           <p className="text-center py-3">
             #{pokemonData.id} of{" "}
             <a
@@ -68,7 +97,7 @@ const Pokedex = ({ pokemonData }) => {
               1008
             </a>
           </p>
-          <div className="flex justify-center bg-white border border-white rounded-lg shadow-md dark:bg-gray-900 dark:border-yellow-400">
+          <div className="flex justify-center bg-white border border-white shadow-md dark:bg-gray-900 dark:border-yellow-400">
             <Image
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemonData.id}.png`}
               alt="Pokémon Image"
