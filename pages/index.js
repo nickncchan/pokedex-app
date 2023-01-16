@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { nanoid } from "nanoid";
 
 export default function Home() {
   const router = useRouter();
@@ -38,6 +37,7 @@ export default function Home() {
         <link
           rel="icon"
           href="https://archives.bulbagarden.net/media/upload/d/dc/GO_Poké_Ball.png"
+          priority={true}
         />
       </Head>
       <div className="text-center py-5">
