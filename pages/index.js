@@ -5,11 +5,11 @@ import { useState } from "react";
 
 export default function Home() {
   const router = useRouter();
-  const [routeId, setRouteId] = useState(Math.floor(Math.random() * 905) + 1);
+  const randomNum = Math.floor(Math.random() * 905) + 1;
 
   const pokemonRoute = (e) => {
     e.preventDefault();
-    router.push(`/pokedex/${routeId}`);
+    router.push(`/pokedex/${randomNum}`);
   };
 
   return (

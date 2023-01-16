@@ -51,7 +51,7 @@ const Pokedex = ({ pokemonData }) => {
           />{" "}
           <button
             type="submit"
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold mx-1 py-1 px-3 rounded-full"
+            className="bg-blue-700 hover:bg-blue-900 text-white font-bold mx-1 py-1 px-3 rounded-full"
           >
             {" "}
             Search{" "}
@@ -122,8 +122,19 @@ const Pokedex = ({ pokemonData }) => {
 export async function getServerSideProps(context) {
   const { params } = context;
   const { id } = params;
-  const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  const data = await res.json();
+  let data;
+
+  try {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    data = await res.json();
+  } catch (err) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
 
   return { props: { pokemonData: data } };
 }
